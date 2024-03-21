@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.math.BigDecimal;
 
 public class converter_gui {
     public JTextField textTo;
@@ -19,19 +18,19 @@ public class converter_gui {
         return new JTextField(defaultValue);
     }
 
-    public converter_gui() {
+    public void cgui() {
         JFrame frame = new JFrame("Currency Converter");
         JButton convertButton = new JButton("Convert");
         convertButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 converting_data converter_data = new converting_data();
 
-                String currency_to = textTo.getText();
                 String currency_from = textFrom.getText();
+                String currency_to = textTo.getText();
                 String currency_amount_str = textAmount.getText();
 
-                double currency_count_to = converter_data.Converter_to(currency_to);
                 double currency_count_from = converter_data.Converter_from(currency_from);
+                double currency_count_to = converter_data.Converter_to(currency_to);
                 double currency_amount = Double.parseDouble(currency_amount_str);
 
                 converter_data.Converter_counter(currency_amount, currency_count_to, currency_count_from);
@@ -40,12 +39,13 @@ public class converter_gui {
         frame.setLayout(new GridBagLayout());
         frame.setLayout(new GridLayout(4, 2));
 
-        JLabel labelTo = createLabel("     Currency to:");
         JLabel labelFrom = createLabel("     Currency from:");
+        JLabel labelTo = createLabel("     Currency to:");
         JLabel labelAmount = createLabel("     Amount:");
 
-        textTo = createTextField("");
+
         textFrom = createTextField("");
+        textTo = createTextField("");
         textAmount = createTextField("");
 
         frame.add(labelFrom);
