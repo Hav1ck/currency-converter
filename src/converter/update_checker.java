@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class update_checker {
     public static void update() throws IOException {
-        String current_version = "v1.0.1";
+        String current_version = "v1.0.2";
         char first_char = current_version.charAt(1);
         char second_char = current_version.charAt(3);
         char third_char = current_version.charAt(5);
