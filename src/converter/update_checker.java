@@ -25,9 +25,9 @@ public class update_checker {
         String second_str_modified = String.valueOf(second_int_modified);
         String third_str_modified = String.valueOf(third_int_modified);
 
-        String first_possible_patch = "v" + first_str_modified + second_char + third_char;
-        String second_possible_patch = "v" + first_char + second_str_modified + third_char;
-        String third_possible_patch = "v" + first_char + second_char + third_str_modified;
+        String first_possible_patch = "v" + first_str_modified + "." + second_char + "." + third_char;
+        String second_possible_patch = "v" + first_char + "." + second_str_modified + "." + third_char;
+        String third_possible_patch = "v" + first_char + "." + second_char + "." + third_str_modified;
 
         latest_version(first_possible_patch);
         latest_version(second_possible_patch);
